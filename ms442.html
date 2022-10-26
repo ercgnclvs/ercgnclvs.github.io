@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halloween Music</title>
+  </head>
+
+  <body>
+    <p>
+      <audio class="audio" controls>
+        <source src="./songs/theme-from-halloween.mp4" type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
+    </p>
+
+    <p>
+      <audio class="audio" controls>
+        <source
+          src="./songs/the-addams-family-theme-instrumental-version.mp4"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio tag.
+      </audio>
+    </p>
+
+    <p>
+      <audio class="audio" controls>
+        <source
+          src="./songs/ghostbusters-instrumental-version.mp4"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio tag.
+      </audio>
+    </p>
+
+    <p>
+      <audio class="audio" controls>
+        <source
+          src="./songs/tim-burton-s-the-nightmare-before-christmas-this.mp4"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio tag.
+      </audio>
+    </p>
+
+    <p>
+      <audio class="audio" controls>
+        <source
+          src="./songs/stranger-things-title-sequence-hd-netflix.mp4"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio tag.
+      </audio>
+    </p>
+
+    <script>
+      var audios = document.querySelectorAll("audio");
+      for (var i = 0; i < audios.length; i++)
+        audios[i].addEventListener(
+          "play",
+          function () {
+            pauseAll(this);
+          },
+          true
+        );
+
+      function pauseAll(elem) {
+        for (var i = 0; i < audios.length; i++) {
+          if (audios[i] == elem) continue;
+          if (audios[i].played.length > 0 && !audios[i].paused) {
+            audios[i].pause();
+            audios[i].currentTime = 0;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
